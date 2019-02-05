@@ -28,19 +28,16 @@ public class SportelliToCSV {
     public static void main(String[] args) {
         List<NodeList> tabella = null;
         Parser dom = new Parser();
+        MioFile file = new MioFile();
         try {
             tabella = dom.parseDocumentV2("sportello.xml");
             String CSV = dom.ArraytoCSVMIO(tabella);
-            System.out.println(CSV);
+            //System.out.println(CSV); /* DEBUG*/
+            file.Sovrascrivi("file.csv", CSV);
+            
         } catch (ParserConfigurationException | SAXException | IOException exception) {
             System.out.println("Errore!");
         }
-        // iterazione della lista e visualizzazione degli oggetti
-//        System.out.println("Numero di HREF: " + tabella.size());
-//        Iterator iterator = tabella.iterator();
-//        while (iterator.hasNext()) {
-//            System.out.println(iterator.next().toString());
-//        }
 
     }
     

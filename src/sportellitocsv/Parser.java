@@ -67,30 +67,6 @@ public class Parser {
         return tabella;
     }
     
-    public String ArraytoCSV(List<NodeList> lista){
-        String s= "";
-        List tmp = new ArrayList();
-        List tmp1 = new ArrayList();
-        tmp = getTextValueX4(lista.get(0),"td");
-        
-        s+=tmp.get(0)+";";
-        s+=tmp.get(1)+";";
-        s+=tmp.get(2)+";";
-        s+=tmp.get(3)+"\r\n";
-        
-        for(int i = 1; i <lista.size()-1;i = i + 2){
-            tmp = getTextValueX4(lista.get(i),"td");
-            tmp1 = getTextValueX4(lista.get(i+1),"td");
-            
-            s+=tmp.get(0)+" "+ tmp1.get(0)+";";
-            s+=tmp.get(1)+" "+ tmp1.get(1)+";";
-            s+=tmp.get(2)+" "+ tmp1.get(2)+";";
-            s+=tmp.get(3)+" "+ tmp1.get(3)+"\n";      
-        }
-        
-        return s;
-    }
-    
     public List<NodeList> parseDocumentV2(String filename)
             throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory factory;
