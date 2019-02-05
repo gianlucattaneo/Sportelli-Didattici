@@ -29,8 +29,8 @@ public class SportelliToCSV {
         List<NodeList> tabella = null;
         Parser dom = new Parser();
         try {
-            tabella = dom.parseDocument("C:/Users/Gianluca/Desktop/file.xml");
-            String CSV = dom.ArraytoCSV(tabella);
+            tabella = dom.parseDocumentV2("sportello.xml");
+            String CSV = dom.ArraytoCSVMIO(tabella);
             System.out.println(CSV);
         } catch (ParserConfigurationException | SAXException | IOException exception) {
             System.out.println("Errore!");
