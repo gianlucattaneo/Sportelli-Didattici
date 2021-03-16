@@ -26,6 +26,7 @@ public class SportelliToCSV {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    	//PEDRO WAS HERE
         List<NodeList> tabella = null;
         Parser dom = new Parser();
         MioFile file = new MioFile();
